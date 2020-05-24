@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImGraph", "ImGraph\ImGraph.csproj", "{28E8F8C8-8514-4AD3-8397-ACADE31D0F43}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C81AE2AD-3F61-4170-B6C0-83F78D64CD47} = {C81AE2AD-3F61-4170-B6C0-83F78D64CD47}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsMyLogic", "..\WhatsMyLogic\WhatsMyLogic\WhatsMyLogic.csproj", "{C81AE2AD-3F61-4170-B6C0-83F78D64CD47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsMyLogic", "..\WhatsMyLogicLib\WhatsMyLogic\WhatsMyLogic.csproj", "{C81AE2AD-3F61-4170-B6C0-83F78D64CD47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

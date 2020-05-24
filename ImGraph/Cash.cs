@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql;
-using MySql.Data;
-using System.Security.Cryptography;
-using System.Net.Sockets;
 using System.IO;
+using System.Net.Sockets;
+//using MySql;
+//using MySql.Data;
+using System.Security.Cryptography;
+using System.Windows.Forms;
 namespace ImGraph
 {
     public partial class Cash : Form
@@ -78,53 +71,53 @@ namespace ImGraph
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            MySql.Data.MySqlClient.MySqlConnection conn;
-            string myConnectionString;
+            //MySql.Data.MySqlClient.MySqlConnection conn;
+            //string myConnectionString;
 
-            myConnectionString = "server=127.0.0.1;uid=uzzer;" +
-                "pwd=W@11B@se;database=blockchain";
+            // myConnectionString = "server=127.0.0.1;uid=uzzer;" +
+            //"pwd=W@11B@se;database=blockchain";
 
-            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
-            try
-            {
-                conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = myConnectionString;
-                conn.Open();
+            // MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+            //try
+            //{
+            //    conn = new MySql.Data.MySqlClient.MySqlConnection();
+            //    conn.ConnectionString = myConnectionString;
+            //    conn.Open();
 
-                cmd.Connection = conn;
-                cmd.CommandType = CommandType.Text;
-                
-                cmd.CommandText = "select * from wallets";
-                MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
-                int i;
-                string str=string.Empty;
-                while (reader.Read())
-                {
-                    for (i=0;i< reader.FieldCount; i++)
-                    {
-                        str += reader[i].ToString()+" ";
-                    }
-                    MessageBox.Show(str);
-                    str = string.Empty;
-                    //Console.WriteLn(reader[0], reader[1]...);
-                }
-                conn.Close();
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            //находит только первый фрагмент
-            // -1 если ничего не найдено
-            int start, len;
-            int found = richTextBox1.Find("купить",0,RichTextBoxFinds.WholeWord);
-            while (found != -1) 
-            {
-                    richTextBox1.SelectionColor = Color.Red;
-                    start = richTextBox1.SelectionStart;
-                    len = richTextBox1.SelectionLength;
-                    found = richTextBox1.Find("купить", start + len, RichTextBoxFinds.WholeWord);
-            }
+            //    cmd.Connection = conn;
+            //    cmd.CommandType = CommandType.Text;
+
+            //    cmd.CommandText = "select * from wallets";
+            //    MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
+            //    int i;
+            //    string str=string.Empty;
+            //    while (reader.Read())
+            //    {
+            //        for (i=0;i< reader.FieldCount; i++)
+            //        {
+            //            str += reader[i].ToString()+" ";
+            //        }
+            //        MessageBox.Show(str);
+            //        str = string.Empty;
+            //        //Console.WriteLn(reader[0], reader[1]...);
+            //    }
+            //    conn.Close();
+            //}
+            //catch (MySql.Data.MySqlClient.MySqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            ////находит только первый фрагмент
+            //// -1 если ничего не найдено
+            //int start, len;
+            //int found = richTextBox1.Find("купить",0,RichTextBoxFinds.WholeWord);
+            //while (found != -1) 
+            //{
+            //        richTextBox1.SelectionColor = Color.Red;
+            //        start = richTextBox1.SelectionStart;
+            //        len = richTextBox1.SelectionLength;
+            //        found = richTextBox1.Find("купить", start + len, RichTextBoxFinds.WholeWord);
+            //}
         }
     }
 }
